@@ -1,0 +1,139 @@
+$bodyBackgroundColor: steelblue;
+$timerBorderColor: grey;
+$timerColor: white;
+$timerTextColor: black;
+$textColor: black;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: verdana, sans-serif;
+}
+
+#container{
+  height: 100vh;
+  background-color: $bodyBackgroundColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1{
+  // border: 1px solid red;
+  color: $textColor;
+  font-size: 40px;
+  text-align: center;
+}
+
+#innerBorderRadius{
+  border: 8px solid $timerBorderColor;
+  border-radius: 8px;
+  background-color: $timerBorderColor;
+  box-shadow:  3px 3px 4px black;
+}
+
+#timer-label{
+  font-size: 24px;
+  color: $textColor;
+}
+
+#timer{
+  border-radius: 4px;
+  min-width: 300px;
+  background-color: $timerColor;
+  color: $timerTextColor;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#time-left{
+  width: 100%;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#timer-control{
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#start_stop{
+  border-left: 8px solid $timerBorderColor;
+  border-bottom: 8px solid $timerBorderColor;
+}
+
+#reset{
+  border-left: 8px solid $timerBorderColor;
+}
+
+#start_stop, #reset{
+  font-size: 32px;
+  width: 60px;
+  background-color: none;
+  text-align: center;
+}
+
+#start_stop:hover, #reset:hover
+{
+  color: steelblue;
+}
+
+#session-decrement:hover, #session-increment:hover,
+#break-decrement:hover, #break-increment:hover
+{
+  color: white;
+}
+
+#start_stop:active, #reset:active
+{
+  background-color: black;
+  color: white;
+}
+
+#session-decrement:active, #session-increment:active,
+#break-decrement:active, #break-increment:active
+{
+  color: black;
+}
+
+#rowSession, #rowBreak{
+  color: $textColor;
+}
+
+@media (max-width: 600px) {
+  #timer{
+    flex-direction: column;
+    min-width: 200px;
+    height: 150px;
+  }
+  
+  #time-left{
+    height: 94px;
+    line-height: 94px;
+  }
+  
+  #timer-control{
+    border-top: 8px solid $timerBorderColor;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  
+  #start_stop{
+    width: 100%;
+    border-left: none;
+    border-bottom: none;
+    border-right: 4px solid $timerBorderColor;
+  }
+  
+  #reset{
+    width: 100%;
+    border-left: 4px solid $timerBorderColor;
+  }
+}
